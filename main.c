@@ -18,6 +18,7 @@
 
 
 
+#include "headers/shellops.h"
 #define EXIT_SUCCESS 0
 
 int main(int argc, char **argv){
