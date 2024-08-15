@@ -1,3 +1,17 @@
+/****************************************************
+ * 
+ * @headerfile       commands.h
+ * 
+ * @author           Aryan Karamtoth (SpaciousCoder78)
+ * 
+ * @date             Thursday, August 15 2024
+ * 
+ * @brief            Gigahertz Shell's Command Functions
+ * 
+ ****************************************************/
+
+
+
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
