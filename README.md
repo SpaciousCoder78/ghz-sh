@@ -34,7 +34,11 @@ $ ./main
 
 ### Supported Commands
 `ls`     --> Shows the files in present working directory
+
 `man`    --> Shows the manual of a command
+
 `sos`    --> Shows avaliable commands and shell info
+
 `chdir`  --> Change directory
+
 `leave`  --> Exit the shell
