@@ -23,11 +23,11 @@ $ cd ghz-sh
 ```
 - Compile the `main.c` file
 ```bash
-$ gcc -o main main.c
+$ gcc -o ghz-sh main.c
 ```
 - Run the executable file
 ```bash
-$ ./main
+$ ./ghz-sh
 ```
 
 ## Manual
