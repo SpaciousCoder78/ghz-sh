@@ -44,8 +44,10 @@ int ghzsh_num_builtins() {
 }
 
 /*
-  Builtin function implementations.
+***********************************Builtin function implementations*************************************
 */
+
+//***************************************chdir*********************************************** */
 int ghzsh_chdir(char **args)
 {
   if (args[1] == NULL) {
@@ -58,6 +60,7 @@ int ghzsh_chdir(char **args)
   return 1;
 }
 
+//*****************************************sos*********************************************** */
 int ghzsh_sos(char **args)
 {
   int i;
@@ -73,6 +76,8 @@ int ghzsh_sos(char **args)
   return 1;
 }
 
+
+//*****************************************leave*********************************************** */
 int ghzsh_leave(char **args)
 {
   return 0;
