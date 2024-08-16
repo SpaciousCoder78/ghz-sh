@@ -20,23 +20,23 @@
 /*
   Function Declarations for builtin shell commands:
  */
-int ghzsh_cd(char **args);
-int ghzsh_help(char **args);
-int ghzsh_exit(char **args);
+int ghzsh_chdir(char **args); //change directory
+int ghzsh_sos(char **args); //help command
+int ghzsh_leave(char **args); //exit command
 
 /*
   List of builtin commands, followed by their corresponding functions.
  */
 char *builtin_str[] = {
-  "cd",
-  "help",
-  "exit"
+  "chdir", //change directory
+  "sos", //help command
+  "leave" //exit command
 };
 
 int (*builtin_func[]) (char **) = {
-  &ghzsh_cd,
-  &ghzsh_help,
-  &ghzsh_exit
+  &ghzsh_chdir, //change directory
+  &ghzsh_sos, //help command
+  &ghzsh_leave //exit command
 };
 
 int ghzsh_num_builtins() {
@@ -46,7 +46,7 @@ int ghzsh_num_builtins() {
 /*
   Builtin function implementations.
 */
-int ghzsh_cd(char **args)
+int ghzsh_chdir(char **args)
 {
   if (args[1] == NULL) {
     fprintf(stderr, "ghz-sh: expected argument to \"cd\"\n");
@@ -58,7 +58,7 @@ int ghzsh_cd(char **args)
   return 1;
 }
 
-int ghzsh_help(char **args)
+int ghzsh_sos(char **args)
 {
   int i;
   printf("Aryan Karamtoth's ghz-sh\n");
@@ -73,7 +73,7 @@ int ghzsh_help(char **args)
   return 1;
 }
 
-int ghzsh_exit(char **args)
+int ghzsh_leave(char **args)
 {
   return 0;
 }
