@@ -9,4 +9,23 @@
 ![Red Hat](https://img.shields.io/badge/Red%20Hat-EE0000?style=for-the-badge&logo=redhat&logoColor=white)
 ![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge)
 
-A Free and Open Source Shell for Operating Systems
+Gigahertz Shell - A Free and Open Source Shell for Operating Systems
+
+## Installation
+
+- Clone the repository
+```bash
+$ git clone https://github.com/SpaciousCoder78/ghz-sh.git
+```
+- Move to project directory
+```bash
+$ cd ghz-sh
+```
+- Compile the `main.c` file
+```bash
+$ gcc -o main main.c
+```
+- Run the executable file
+```bash
+$ ./main
+```
