@@ -124,7 +124,7 @@ char **ghzsh_splitLine(){
             //realloc bufsize
             tokens = realloc(tokens, bufsize * sizeof(char*));
             if (!tokens) {
-                fprintf(stderr, "lsh: allocation error\n");
+                fprintf(stderr, "ghz-sh: allocation error\n");
                 exit(EXIT_FAILURE);
       }
             
