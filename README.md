@@ -44,37 +44,37 @@ $ ./main
   <!--ls-->
   <tr>
     <td><code>ls</code></td>
-    <td>`ls`</td>
+    <td><code>ls</code></td>
     <td>Shows the files in present working directory</td>
   </tr>
   <!--man-->
   <tr>
-    <td>`man`</td>
-    <td>`man commandname`</td>
+    <td><code>man</code></td>
+    <td><code>man commandname</code></td>
     <td>Shows the manual of a command</td>
   </tr>
   <!--ps-->
   <tr>
-    <td>`ps`</td>
-    <td>`ps`</td>
+    <td><code>ps</code></td>
+    <td><code>ps</code></td>
     <td>Shows the running processes in the system</td>
   </tr>
   <!--sos-->
   <tr>
-    <td>`sos`</td>
-    <td>`sos`</td>
+    <td><code>sos</code></td>
+    <td><code>sos</code></td>
     <td>Shows avaliable commands and shell information</td>
   </tr>
   <!--chdir-->
   <tr>
-    <td>`chdir`</td>
-    <td>`chdir foldername/filename`</td>
+    <td><code>chdir</code></td>
+    <td><code>chdir foldername/filename</code></td>
     <td>Change directory</td>
   </tr>
   <!--leave-->
   <tr>
-    <td>`leave`</td>
-    <td>`leave`</td>
+    <td><code>leave</code></td>
+    <td><code>leave</code></td>
     <td>Exits the Shell</td>
   </tr>
 </table>
