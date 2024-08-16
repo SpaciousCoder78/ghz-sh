@@ -33,15 +33,6 @@ $ ./main
 ## Manual
 
 ### Supported Commands
-`ls`     --> Shows the files in present working directory
-
-`man`    --> Shows the manual of a command
-
-`sos`    --> Shows avaliable commands and shell info
-
-`chdir`  --> Change directory
-
-`leave`  --> Exit the shell
 
 <table>
   <!--Table head-->
@@ -52,7 +43,7 @@ $ ./main
   </tr>
   <!--ls-->
   <tr>
-    <td>`ls`</td>
+    <td><code>ls</code></td>
     <td>`ls`</td>
     <td>Shows the files in present working directory</td>
   </tr>
