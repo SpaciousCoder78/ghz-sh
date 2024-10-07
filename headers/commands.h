@@ -31,15 +31,15 @@ int ghzsh_tell(char **args); //tell command
 char *builtin_str[] = {
   "chdir", //change directory
   "sos", //help command
-  "leave" //exit command
+  "leave", //exit command
   "tell" //tell command
 };
 
 int (*builtin_func[]) (char **) = {
   &ghzsh_chdir, //change directory
   &ghzsh_sos, //help command
-  &ghzsh_leave //exit command
-  &ghzsh_tell //tell command
+  ghzsh_leave, //exit command
+  ghzsh_tell //tell command
 };
 
 int ghzsh_num_builtins() {
@@ -64,22 +64,22 @@ int ghzsh_chdir(char **args)
 }
 
 int ghzsh_tell(char **args){
-  args = strtok(NULL, " \t");
+  char *token = strtok(NULL, " \t");
 
-    while(args != NULL)
+    while(token != NULL)
     {
-        int n = strlen(args);
+        int n = strlen(token);
         int doubleQuotes = 0;
         int singleQuotes = 0;
 
         for(int i=0; i<n; i++)
         {
-            if(args[i] == '"')
+            if(token[i] == '"')
             {
                 doubleQuotes++;
             }
             
-            else if(args[i] == '\'')
+            else if(token[i] == '\'')
             {
                 singleQuotes++;
             }
@@ -89,45 +89,45 @@ int ghzsh_tell(char **args){
         {
             if(singleQuotes%2 == 0 && doubleQuotes%2 == 0)
             {
-                if(args[i] == '"' || args[i] == '\'')
+                if(token[i] == '"' || token[i] == '\'')
                 {
                     continue;
                 }
 
                 else
                 {
-                    printf("%c", args[i]);
+                    printf("%c", token[i]);
                 }
             }
 
             else if(singleQuotes%2 == 0)
             {
-                if(args[i] == '\''){
+                if(token[i] == '\''){
                     continue;
                 }
 
                 else{
-                    printf("%c", args[i]);
+                    printf("%s", token);
                 }
             }
 
             else if(doubleQuotes%2 == 0){
-                if(args[i] == '"'){
+                if(token[i] == '"'){
                     continue;
                 }
 
                 else{
-                    printf("%c", args[i]);
+                    printf("%s", args[i]);
                 }
             }
 
             else{
-                printf("%c", args[i]);
+                printf("%s", args[i]);
             }
         }
 
         printf(" ");
-        args = strtok(NULL, " \t");
+        token = strtok(NULL, " \t");
     }
     printf("\n");
 }
