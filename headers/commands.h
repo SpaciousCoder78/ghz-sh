@@ -63,21 +63,29 @@ int ghzsh_chdir(char **args)
   return 1;
 }
 
+//***************************************tell*************************************************
+
 int ghzsh_tell(char **args) {
+  //error handling
   if (args[1] == NULL) {
     fprintf(stderr, "ghz-sh: expected argument to \"tell\"\n");
-  } else if (strcmp(args[1], "add") == 0) {
+  } else if (strcmp(args[1], "add") == 0) { //addition operation
     if (args[2] == NULL || args[3] == NULL) {
+      //error handling
       fprintf(stderr, "ghz-sh: expected two numbers to add\n");
     } else {
+      //add two operators
       int num1 = atoi(args[2]);
       int num2 = atoi(args[3]);
       printf("%d\n", num1 + num2);
     }
+    //subtraction operation
   } else if (strcmp(args[1], "sub") == 0) {
     if (args[2] == NULL || args[3] == NULL) {
+      //error handling
       fprintf(stderr, "ghz-sh: expected two numbers to subtract\n");
     } else {
+      //add two operators
       int num1 = atoi(args[2]);
       int num2 = atoi(args[3]);
       printf("%d\n", num1 - num2);
