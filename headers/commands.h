@@ -63,9 +63,45 @@ int ghzsh_chdir(char **args)
   return 1;
 }
 
-int ghzsh_tell(char **args){
+int ghzsh_tell(char **args) {
   if (args[1] == NULL) {
     fprintf(stderr, "ghz-sh: expected argument to \"tell\"\n");
+  } else if (strcmp(args[1], "add") == 0) {
+    if (args[2] == NULL || args[3] == NULL) {
+      fprintf(stderr, "ghz-sh: expected two numbers to add\n");
+    } else {
+      int num1 = atoi(args[2]);
+      int num2 = atoi(args[3]);
+      printf("%d\n", num1 + num2);
+    }
+  } else if (strcmp(args[1], "sub") == 0) {
+    if (args[2] == NULL || args[3] == NULL) {
+      fprintf(stderr, "ghz-sh: expected two numbers to subtract\n");
+    } else {
+      int num1 = atoi(args[2]);
+      int num2 = atoi(args[3]);
+      printf("%d\n", num1 - num2);
+    }
+  } else if (strcmp(args[1], "mul") == 0) {
+    if (args[2] == NULL || args[3] == NULL) {
+      fprintf(stderr, "ghz-sh: expected two numbers to multiply\n");
+    } else {
+      int num1 = atoi(args[2]);
+      int num2 = atoi(args[3]);
+      printf("%d\n", num1 * num2);
+    }
+  } else if (strcmp(args[1], "div") == 0) {
+    if (args[2] == NULL || args[3] == NULL) {
+      fprintf(stderr, "ghz-sh: expected two numbers to divide\n");
+    } else {
+      int num1 = atoi(args[2]);
+      int num2 = atoi(args[3]);
+      if (num2 == 0) {
+        fprintf(stderr, "ghz-sh: division by zero error\n");
+      } else {
+        printf("%d\n", num1 / num2);
+      }
+    }
   } else {
     for (int i = 1; args[i] != NULL; i++) {
       printf("%s ", args[i]);
@@ -74,7 +110,6 @@ int ghzsh_tell(char **args){
   }
   return 1;
 }
-
 //*****************************************sos*********************************************** */
 int ghzsh_sos(char **args)
 {
