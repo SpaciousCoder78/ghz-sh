@@ -77,6 +77,18 @@ $ ./ghz-sh
     <td><code>leave</code></td>
     <td>Exits the Shell</td>
   </tr>
+  <!--tell-->
+  <tr>
+    <td><code>tell</code></td>
+    <td><code>tell texthere</code></td>
+    <td>Prints entered text</td>
+  </tr>
+  <tr>
+    <td><code>tell</code> Operations</td>
+    <td><code>tell [operation_code] [operand1] [operand2]</code></td>
+    <td>Performs math operation on two operands</td>
+  </tr>
+  
 </table>
   
 
