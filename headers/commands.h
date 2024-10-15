@@ -38,8 +38,8 @@ char *builtin_str[] = {
 int (*builtin_func[]) (char **) = {
   &ghzsh_chdir, //change directory
   &ghzsh_sos, //help command
-  ghzsh_leave, //exit command
-  ghzsh_tell //tell command
+  &ghzsh_leave, //exit command
+  &ghzsh_tell //tell command
 };
 
 int ghzsh_num_builtins() {
@@ -64,72 +64,15 @@ int ghzsh_chdir(char **args)
 }
 
 int ghzsh_tell(char **args){
-  char *token = strtok(NULL, " \t");
-
-    while(token != NULL)
-    {
-        int n = strlen(token);
-        int doubleQuotes = 0;
-        int singleQuotes = 0;
-
-        for(int i=0; i<n; i++)
-        {
-            if(token[i] == '"')
-            {
-                doubleQuotes++;
-            }
-            
-            else if(token[i] == '\'')
-            {
-                singleQuotes++;
-            }
-        }
-
-        for(int i = 0; i < n; i++)
-        {
-            if(singleQuotes%2 == 0 && doubleQuotes%2 == 0)
-            {
-                if(token[i] == '"' || token[i] == '\'')
-                {
-                    continue;
-                }
-
-                else
-                {
-                    printf("%c", token[i]);
-                }
-            }
-
-            else if(singleQuotes%2 == 0)
-            {
-                if(token[i] == '\''){
-                    continue;
-                }
-
-                else{
-                    printf("%s", token);
-                }
-            }
-
-            else if(doubleQuotes%2 == 0){
-                if(token[i] == '"'){
-                    continue;
-                }
-
-                else{
-                    printf("%s", args[i]);
-                }
-            }
-
-            else{
-                printf("%s", args[i]);
-            }
-        }
-
-        printf(" ");
-        token = strtok(NULL, " \t");
+  if (args[1] == NULL) {
+    fprintf(stderr, "ghz-sh: expected argument to \"tell\"\n");
+  } else {
+    for (int i = 1; args[i] != NULL; i++) {
+      printf("%s ", args[i]);
     }
     printf("\n");
+  }
+  return 1;
 }
 
 //*****************************************sos*********************************************** */
